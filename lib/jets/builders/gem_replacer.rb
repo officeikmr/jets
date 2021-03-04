@@ -29,7 +29,7 @@ module Jets::Builders
     def rename_gem(gem_name)
       ruby_folder = "#{Jets.build_root}/stage/opt/ruby/gems/#{Jets::Gems.ruby_folder}"
       gems_folder = "#{ruby_folder}/gems"
-      expr = "#{gems_folder}/#{gem_name}-x*-{darwin,linux}"
+      expr = "#{gems_folder}/#{gem_name}-{a,x}*-{darwin,linux}"
       src = Dir.glob(expr).first
       return unless src
 
